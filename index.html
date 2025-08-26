@@ -1,134 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stéfano Lopes | Designer Gráfico</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { background: #0B1B2A; color: #fff; font-family: 'Segoe UI', sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: #ddd; }
-    .btn-outline-light:hover { background-color: #fff; color: #0B1B2A; }
-    .section { padding: 4rem 1rem; }
-    .avatar { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; }
-    .card { background-color: #112A40; border: none; border-radius: 12px; }
-    .footer { border-top: 1px solid #223D5B; padding-top: 1rem; font-size: 0.9rem; }
-    .icon { margin-right: 0.5rem; }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg bg-transparent border-bottom border-secondary px-3">
-    <a class="navbar-brand text-white" href="#"> <i class="fa-solid fa-palette"></i> Stéfano Lopes </a>
-    <div class="ms-auto d-none d-lg-flex">
-      <a href="#portfolio" class="mx-2">Portfólio</a>
-      <a href="#sobre" class="mx-2">Sobre</a>
-      <a href="#servicos" class="mx-2">Serviços</a>
-      <a href="#contato" class="mx-2">Contato</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="section text-center">
-    <div class="container">
-      <h1 class="fw-bold display-5">Design que inspira e transforma</h1>
-      <p class="mt-3">Criando identidades visuais marcantes e soluções criativas que contam histórias e conectam marcas com seu público.</p>
-      <div class="my-3">
-        <a class="btn btn-outline-light me-2" href="#portfolio">Ver portfólio</a>
-        <a class="btn btn-light" href="#contato">Vamos conversar</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stéfano Lopes | Designer Gráfico</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #0f1e2e;
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ddd;
+      }
+      .btn-outline-light:hover {
+        background-color: #fff;
+        color: #0f1e2e;
+      }
+      .section {
+        padding: 5rem 1rem;
+      }
+      .avatar {
+        width: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #fff;
+      }
+      .card {
+        color: #fff;
+        background-color: #142b40;
+        border: none;
+        border-radius: 12px;
+        text-align: center;
+        padding: 1rem;
+      }
+      .card img {
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .footer {
+        border-top: 1px solid #223d5b;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+      .icon {
+        margin-right: 0.5rem;
+      }
+      .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .hero-text {
+        max-width: 550px;
+      }
+      .form-control {
+        background: #112a40;
+        border: none;
+        color: #fff;
+      }
+      .form-control:focus {
+        background: #112a40;
+        color: #fff;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav
+      class="navbar navbar-expand-lg bg-transparent border-bottom border-secondary px-3"
+    >
+      <a class="navbar-brand text-white fw-bold" href="#">
+        <i class="fa-solid fa-palette"></i> Stéfano Lopes
+      </a>
+      <div class="ms-auto d-none d-lg-flex">
+        <a href="#portfolio" class="mx-3">Portfólio</a>
+        <a href="#sobre" class="mx-3">Sobre</a>
+        <a href="#servicos" class="mx-3">Serviços</a>
+        <a href="#contato" class="mx-3">Contato</a>
       </div>
-      <div class="mt-4">
-        <img src="avatar.png" class="avatar" alt="Avatar Stéfano Lopes">
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Portfólio -->
-  <section id="portfolio" class="section bg-dark text-center">
-    <div class="container">
-      <h2 class="mb-4">Meu Portfólio</h2>
-      <p>Explore meus projetos mais recentes e veja como transformo ideias em designs impactantes</p>
-      <div class="row row-cols-1 row-cols-md-3 g-3 mt-4">
-        <div class="col"><div class="card p-2">Posts redes sociais</div></div>
-        <div class="col"><div class="card p-2">Identidade visual</div></div>
-        <div class="col"><div class="card p-2">Artes gráficas</div></div>
-        <div class="col"><div class="card p-2">Web design</div></div>
-        <div class="col"><div class="card p-2">Apresentações</div></div>
-        <div class="col"><div class="card p-2">Motion design</div></div>
-      </div>
-      <button class="btn btn-outline-light mt-4">Carregar mais</button>
-    </div>
-  </section>
-
-  <!-- Sobre Mim -->
-  <section id="sobre" class="section">
-    <div class="container d-md-flex align-items-center">
-      <img src="avatar.png" class="avatar me-md-4 mb-3 mb-md-0" alt="Stéfano Lopes" />
-      <div>
-        <h3>Sobre Mim</h3>
-        <p>Sou um designer gráfico apaixonado por criar soluções visuais que conectam marcas com seu público...</p>
-        <div class="mt-2">
-          <span class="badge bg-secondary">Design Gráfico</span>
-          <span class="badge bg-secondary">Ilustração</span>
-          <span class="badge bg-secondary">UI/UX</span>
+    <!-- Hero -->
+    <section class="section hero container">
+      <div class="hero-text">
+        <h1 class="fw-bold display-5">Design que inspira e transforma</h1>
+        <p class="mt-3">
+          Criando identidades visuais marcantes e soluções criativas que contam
+          histórias e conectam marcas com seu público.
+        </p>
+        <div class="my-4">
+          <a class="btn btn-outline-light me-2" href="#portfolio"
+            >Ver portfólio</a
+          >
+          <a class="btn btn-light" href="#contato">Vamos conversar</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section id="servicos" class="section bg-dark text-center">
-    <div class="container">
-      <h2>Meus Serviços</h2>
-      <p>Ofereço soluções completas em design para ajudar sua marca a se destacar.</p>
-      <div class="row row-cols-1 row-cols-md-3 g-3 mt-4">
-        <div class="col"><div class="card p-3">Identidade Visual</div></div>
-        <div class="col"><div class="card p-3">Posts para Redes Sociais</div></div>
-        <div class="col"><div class="card p-3">Web Design</div></div>
-        <div class="col"><div class="card p-3">Artes Gráficas</div></div>
-        <div class="col"><div class="card p-3">Materiais Gráficos</div></div>
-        <div class="col"><div class="card p-3">Motion Design</div></div>
+      <div class="text-center mt-4 mt-md-0">
+        <img
+          src="./images/avatar.png"
+          class="avatar"
+          alt="Avatar Stéfano Lopes"
+        />
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contato -->
-  <section id="contato" class="section">
-    <div class="container">
-      <h2 class="text-center mb-4">Vamos conversar</h2>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <p>Pronto para transformar suas ideias em designs incríveis? Entre em contato!</p>
-          <p><i class="fa fa-envelope icon"></i>stefanolumags@hotmail.com</p>
-          <p><i class="fa fa-phone icon"></i>+55 (61) 98586-4315</p>
-          <p><i class="fa fa-map-marker-alt icon"></i>Brasília, Brasil</p>
+    <!-- Portfólio -->
+    <section id="portfolio" class="section bg-dark text-center">
+      <div class="container">
+        <h2 class="mb-4">Meu Portfólio</h2>
+        <p>
+          Explore meus projetos mais recentes e veja como transformo ideias em
+          designs impactantes
+        </p>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+          <div class="col">
+            <div class="card">
+              <h5>Posts redes sociais</h5>
+              <img src="./images/redes.png" alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <h5>Identidade Visual teste</h5>
+              <img src="./images/id_visual.png" alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <h5>Artes gráficas</h5>
+              <img src="./images/artes_graficas.png" alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <h5>Web design</h5>
+              <img src="./images/web_design.png" alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <h5>Apresentações</h5>
+              <img src="./images/apresentacao.png" alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <h5>Motion design</h5>
+              <img src="./images/motion_design.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="section">
+      <div class="container d-md-flex align-items-center">
+        <img
+          src="./images/avatar.png"
+          class="avatar me-md-4 mb-3 mb-md-0"
+          alt="Stéfano Lopes"
+          style="width: 150px"
+        />
+        <div>
+          <h3>Sobre Mim</h3>
           <p>
-            <a href="#"><i class="fab fa-behance"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            Sou um designer gráfico apaixonado por criar soluções visuais que
+            conectam marcas com seu público. Trabalho com identidade visual,
+            social media, ilustrações, apresentações e design digital, buscando
+            sempre alinhar estética e propósito.
           </p>
-        </div>
-        <div class="col-md-6">
-          <form>
-            <input class="form-control mb-2" type="text" placeholder="Seu Nome">
-            <input class="form-control mb-2" type="email" placeholder="Seu Email">
-            <input class="form-control mb-2" type="text" placeholder="Assunto">
-            <textarea class="form-control mb-2" rows="3" placeholder="Sua Mensagem"></textarea>
-            <button class="btn btn-light">Enviar Mensagem</button>
-          </form>
+          <div class="mt-2">
+            <span class="badge bg-secondary">Design Gráfico</span>
+            <span class="badge bg-secondary">Ilustração</span>
+            <span class="badge bg-secondary">UI/UX</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer text-center mt-5 pb-3">
-    <div class="container">
-      <p><i class="fa-solid fa-palette"></i> Stéfano Lopes | Transformando ideias em design</p>
-      <small>&copy; 2025 Stéfano Lopes. Todos os direitos reservados.</small>
-    </div>
-  </footer>
-</body>
+    <!-- Serviços -->
+    <section id="servicos" class="section bg-dark text-center">
+      <div class="container">
+        <h2>Meus Serviços</h2>
+        <p>
+          Ofereço soluções completas em design para ajudar sua marca a se
+          destacar.
+        </p>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+          <div class="col">
+            <div class="card p-3">Identidade Visual</div>
+          </div>
+          <div class="col">
+            <div class="card p-3">Posts para Redes Sociais</div>
+          </div>
+          <div class="col">
+            <div class="card p-3">Web Design</div>
+          </div>
+          <div class="col">
+            <div class="card p-3">Artes Gráficas</div>
+          </div>
+          <div class="col">
+            <div class="card p-3">Materiais Gráficos</div>
+          </div>
+          <div class="col">
+            <div class="card p-3">Motion Design</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h2 class="text-center mb-4">Vamos conversar</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <p>
+              Pronto para transformar suas ideias em designs incríveis? Entre em
+              contato!
+            </p>
+            <p><i class="fa fa-envelope icon"></i>stefanolumags@hotmail.com</p>
+            <p><i class="fa fa-phone icon"></i>+55 (61) 98586-4315</p>
+            <p><i class="fa fa-map-marker-alt icon"></i>Brasília, Brasil</p>
+            <p>
+              <a href="#"><i class="fab fa-behance fa-lg me-2"></i></a>
+              <a
+                href="https://www.linkedin.com/in/st%C3%A9fano-lumba/"
+                target="_blank"
+                ><i class="fab fa-linkedin fa-lg me-2"></i
+              ></a>
+              <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <form>
+              <input
+                class="form-control mb-3"
+                type="text"
+                placeholder="Seu Nome"
+              />
+              <input
+                class="form-control mb-3"
+                type="email"
+                placeholder="Seu Email"
+              />
+              <input
+                class="form-control mb-3"
+                type="text"
+                placeholder="Assunto"
+              />
+              <textarea
+                class="form-control mb-3"
+                rows="3"
+                placeholder="Sua Mensagem"
+              ></textarea>
+              <button class="btn btn-light w-100">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center mt-5 pb-3">
+      <div class="container">
+        <p class="mb-1 fw-bold">
+          <i class="fa-solid fa-palette"></i> Stéfano Lopes | Transformando
+          ideias em design
+        </p>
+        <small>&copy; 2025 Stéfano Lopes. Todos os direitos reservados.</small>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stéfano Lopes | Designer Gráfico</title>
   <script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init({
-          publicKey: "VR_pFOxmnOP1nGw7s",
-        });
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "VR_pFOxmnOP1nGw7s",
+      });
     })();
-</script>
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
@@ -1782,32 +1782,32 @@
       <p class="section-subtitle">Explore meus projetos mais recentes e veja como transformo ideias em designs
         impactantes</p>
 
-              <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <img src="./images/redes.png" alt="Posts redes sociais">
-            <h3>Posts redes sociais</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="./images/id_visual.png" alt="Identidade visual">
-            <h3>Identidade visual</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="./images/artes_graficas.png" alt="Artes gráficas">
-            <h3>Artes gráficas</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="./images/web_design.png" alt="Web design">
-            <h3>Web design</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="./images/apresentacao.png" alt="Apresentações">
-            <h3>Apresentações</h3>
-          </div>
-          <div class="portfolio-item">
-            <img src="./images/motion_design.png" alt="Motion design">
-            <h3>Motion design</h3>
-          </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="./images/redes.png" alt="Posts redes sociais">
+          <h3>Posts redes sociais</h3>
         </div>
+        <div class="portfolio-item">
+          <img src="./images/id_visual.png" alt="Identidade visual">
+          <h3>Identidade visual</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="./images/artes_graficas.png" alt="Artes gráficas">
+          <h3>Artes gráficas</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="./images/web_design.png" alt="Web design">
+          <h3>Web design</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="./images/apresentacao.png" alt="Apresentações">
+          <h3>Apresentações</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="./images/motion_design.png" alt="Motion design">
+          <h3>Motion design</h3>
+        </div>
+      </div>
 
       <!-- <div class="load-more">
           <a href="#" class="btn-load-more">Carregar Mais</a>
@@ -2090,30 +2090,32 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
     // Inicializa EmailJS com chaves fixas (sem import.meta)
-    (function() { 
+    (function () {
       emailjs.init({
         publicKey: "VR_pFOxmnOP1nGw7s",
       });
     })();
 
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
 
-      emailjs.sendForm(
-        "service_uekmv04",
-        "template_pqlyq9i", 
-        this
-      )
-      .then(() => {
-        alert("✅ Mensagem enviada com sucesso!");
-        this.reset();
-      }, (error) => {
-        alert("❌ Erro ao enviar mensagem. Tente novamente.");
-        console.error("EmailJS Error:", error);
-      });
+      emailjs.send("service_uekmv04", "template_pqlyq9i", {
+        nome: "Gustavo",
+        email: "Email",
+        assunto: "Assunt0",
+        mensagem: "Mensagem",
+      })
+        .then(() => {
+          alert("✅ Mensagem enviada com sucesso!");
+          this.reset();
+        }, (error) => {
+          alert("❌ Erro ao enviar mensagem. Tente novamente.");
+          console.error("EmailJS Error:", error);
+        });
     });
   </script>
 
 
 </body>
+
 </html>

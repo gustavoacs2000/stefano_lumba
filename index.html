@@ -5,6 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stéfano Lopes | Designer Gráfico</title>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "VR_pFOxmnOP1nGw7s",
+        });
+    })();
+</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
@@ -2082,15 +2090,17 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
     // Inicializa EmailJS com chaves fixas (sem import.meta)
-    (function() {
-      emailjs.init("VR_pFOxmnOP1nGw7s");
+    (function() { 
+      emailjs.init({
+        publicKey: "VR_pFOxmnOP1nGw7s",
+      });
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
       emailjs.sendForm(
-        "service_cdzlo6c",
+        "service_uekmv04",
         "template_pqlyq9i", 
         this
       )

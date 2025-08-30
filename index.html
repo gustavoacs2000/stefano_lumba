@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stéfano Lopes | Designer Gráfico</title>
-  <script type="text/javascript">    
+  <script type="text/javascript">
     (function () {
       // https://dashboard.emailjs.com/admin/account
       emailjs.init({
@@ -1727,6 +1727,7 @@
       }
     }
   </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -2088,33 +2089,9 @@
 
   <!-- SDK do EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    // Inicializa EmailJS com chaves fixas (sem import.meta)
-    (function () {
-      emailjs.init({
-        publicKey: "VR_pFOxmnOP1nGw7s",
-      });
-    })();
 
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      emailjs.sendForm(
-        "service_uekmv04",
-        "template_pqlyq9i",
-        
-      )
-        .then(() => {
-          alert("✅ Mensagem enviada com sucesso!");
-          this.reset();
-        }, (error) => {
-          alert("❌ Erro ao enviar mensagem. Tente novamente.");
-          console.error("EmailJS Error:", error);
-        });
-    });
-  </script>
-
-
+  <script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

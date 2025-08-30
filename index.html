@@ -2080,42 +2080,31 @@
 
   <!-- Importa SDK do EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="module">
-    import emailjs from "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+  <!-- SDK do EmailJS (sem import/export, global) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    // inicializa com a public key
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "VR_pFOxmnOP1nGw7s");
+  })();
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.querySelector("#contact-form");
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const templateParams = {
-          from_name: form.querySelector('input[name="nome"]').value,
-          from_email: form.querySelector('input[name="email"]').value,
-          subject: form.querySelector('input[name="assunto"]').value,
-          message: form.querySelector('textarea[name="mensagem"]').value,
-        };
-
-        emailjs
-          .send(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            templateParams,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-          )
-          .then(
-            (response) => {
-              alert("Mensagem enviada com sucesso!");
-              form.reset();
-            },
-            (error) => {
-              alert("Erro ao enviar mensagem, tente novamente.");
-              console.error("EmailJS Error:", error);
-            }
-          );
-      });
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_cdzlo6c",
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_pqlyq9i",
+      this
+    )
+    .then(() => {
+      alert("✅ Mensagem enviada com sucesso!");
+      this.reset();
+    }, (error) => {
+      alert("❌ Erro ao enviar: " + JSON.stringify(error));
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>

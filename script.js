@@ -6,7 +6,7 @@ function sendMail(event) {
     // 2. IDs do seu serviço e template do EmailJS
     const serviceID = "service_uekmv04";
     const templateID = "template_pqlyq9i";
-    
+
     // 3. ATENÇÃO: Insira sua Chave Pública (Public Key) aqui!
     // Você a encontra no painel do EmailJS em: Account > API Keys
     const publicKey = "VR_pFOxmnOP1nGw7s";
@@ -19,7 +19,7 @@ function sendMail(event) {
         assunto: document.querySelector('input[name="assunto"]').value,
         mensagem: document.querySelector('textarea[name="mensagem"]').value,
     };
-    
+
     // 5. Validação simples: verifica se algum campo está vazio
     if (!templateParams.nome || !templateParams.email || !templateParams.assunto || !templateParams.mensagem) {
         alert("Por favor, preencha todos os campos.");
@@ -36,7 +36,7 @@ function sendMail(event) {
                 // Executado em caso de SUCESSO
                 console.log('E-mail enviado com sucesso!', response.status, response.text);
                 alert('Obrigado! Sua mensagem foi enviada.');
-                
+
                 // Limpa os campos do formulário após o envio
                 document.getElementById('contact-form').reset();
             },

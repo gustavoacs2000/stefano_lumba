@@ -18,8 +18,8 @@
     /* Garante alinhamento lateral do header e hero section */
     .header,
     .hero {
-      padding-left: 80px !important;
-      padding-right: 80px !important;
+      padding-left: calc(var(--page-h-padding) + 40px) !important;
+      padding-right: calc(var(--page-h-padding) + 40px) !important;
     }
 
     * {
@@ -28,10 +28,17 @@
       box-sizing: border-box;
     }
 
+    :root {
+      /* horizontal page padding applied to container and sections */
+      --page-h-padding: 70px;
+    }
+
     body {
       background: linear-gradient(135deg, #0f1e2e 0%, #1a2f3f 50%, #0f1e2e 100%);
       color: #fff;
       font-family: 'Bell MT', 'Times New Roman', serif;
+      /* slightly larger base font for improved legibility */
+      font-size: 17px;
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
@@ -39,8 +46,8 @@
 
     /* Padroniza padding lateral e vertical de todas as sections */
     section {
-      padding-left: 50px !important;
-      padding-right: 50px !important;
+      padding-left: var(--page-h-padding) !important;
+      padding-right: var(--page-h-padding) !important;
       padding-top: 120px !important;
       padding-bottom: 120px !important;
     }
@@ -79,7 +86,10 @@
     .container {
       max-width: 1600px;
       margin: 0 auto;
-      padding: 0 !important;
+      padding-left: var(--page-h-padding);
+      padding-right: var(--page-h-padding);
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
       width: 100%;
       position: relative;
     }
@@ -168,7 +178,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #0f1e2e 0%, #1a2f3f 50%, #0f1e2e 100%);
+      /* background igual ao da seção de contato */
+      background: linear-gradient(145deg, #1a2f3f 0%, #0f1e2e 50%, #1a2f3f 100%);
     }
 
     .hero>.container {
@@ -185,14 +196,14 @@
       width: 100%;
       max-width: 1600px;
       padding: 0 35px;
-      padding-left: 50px !important;
-      padding-right: 50px !important;
+      padding-left: var(--page-h-padding) !important;
+      padding-right: var(--page-h-padding) !important;
       padding-top: 100px !important;
       padding-bottom: 80 !important;
       margin: 0 auto;
     }
 
-    /* Textura de pingos de tinta apenas no hero */
+    /* Hero - replicando exatamente o efeito de ondas e gradiente do contato */
     .hero::before {
       content: '';
       position: absolute;
@@ -201,15 +212,12 @@
       width: 100%;
       height: 100%;
       background-image:
-        radial-gradient(circle at 20% 30%, rgba(79, 195, 247, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(41, 182, 246, 0.18) 0%, transparent 50%),
-        radial-gradient(circle at 40% 70%, rgba(2, 136, 209, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(79, 195, 247, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 10% 90%, rgba(41, 182, 246, 0.16) 0%, transparent 50%),
-        radial-gradient(circle at 70% 40%, rgba(2, 136, 209, 0.18) 0%, transparent 50%);
+        radial-gradient(ellipse at 25% 25%, rgba(79, 195, 247, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse at 75% 75%, rgba(41, 182, 246, 0.06) 0%, transparent 70%);
       pointer-events: none;
-      z-index: -1;
-      animation: paintDrops 15s ease-in-out infinite;
+      z-index: 0;
+      opacity: 0.1;
+      animation: contactWaves 18s ease-in-out infinite;
     }
 
     @keyframes paintDrops {
@@ -236,7 +244,7 @@
       }
     }
 
-    /* Pingos de tinta adicionais no hero */
+    /* Pingos de tinta adicionais no hero (mantém apenas os pingos originais) */
     .hero::after {
       content: '';
       position: absolute;
@@ -278,7 +286,7 @@
     }
 
     .hero h1 {
-      font-size: 5.2rem;
+      font-size: 5.8rem;
       font-weight: 700;
       margin-bottom: 35px;
       line-height: 1.2;
@@ -525,9 +533,10 @@
       zoom: 0.8;
     }
 
-    /* Hero Section - Background especial com gradiente azul */
+    /* Hero Section - use the same background & animation as Contact section for color/feel parity */
     .hero {
-      background: linear-gradient(135deg, #0f1e2e 0%, #1a2f3f 50%, #0f1e2e 100%);
+      /* same gradient as .section#contato */
+      background: linear-gradient(145deg, #1a2f3f 0%, #0f1e2e 50%, #1a2f3f 100%);
       position: relative;
       overflow: hidden;
     }
@@ -565,17 +574,12 @@
       opacity: 0.1;
     }
 
-    /* Hero - Efeito de partículas flutuantes */
+    /* Hero - reuse Contact section's subtle wave/ellipse background and animation */
     .hero::before {
       background-image:
-        radial-gradient(2px 2px at 20px 30px, rgba(79, 195, 247, 0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(41, 182, 246, 0.25), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(2, 136, 209, 0.35), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(79, 195, 247, 0.2), transparent),
-        radial-gradient(2px 2px at 160px 30px, rgba(41, 182, 246, 0.3), transparent);
-      /* background-repeat: repeat; */
-      background-size: 200px 200px;
-      /* animation: float 25s linear infinite; */
+        radial-gradient(ellipse at 25% 25%, rgba(79, 195, 247, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse at 75% 75%, rgba(41, 182, 246, 0.06) 0%, transparent 70%);
+      animation: contactWaves 18s ease-in-out infinite;
     }
 
     /* Portfolio - Efeito de linhas diagonais sutis */
@@ -705,7 +709,7 @@
 
     .section-title {
       text-align: center;
-      font-size: 4rem;
+      font-size: 4.6rem;
       font-weight: 700;
       margin-bottom: 35px;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
@@ -713,7 +717,7 @@
 
     .section-subtitle {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.65rem;
       margin-bottom: 85px;
       opacity: 0.8;
       max-width: 900px;
@@ -823,8 +827,9 @@
 
     .about-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 110px;
+      /* left column fixed to avatar width, right column flexible */
+      grid-template-columns: 640px 1fr;
+      gap: 180px; /* increased gap to push image and text further apart */
       align-items: center;
       max-width: 1600px;
       margin: 0 auto;
@@ -832,21 +837,35 @@
       z-index: 1;
     }
 
+    /* Align avatar to the left column and increase its size so left spacing equals right */
+    .about-content > div:first-child {
+      justify-self: start; /* keep avatar flush to the left grid column */
+      display: flex;
+      align-items: center;
+    }
+
     .about-avatar {
-      width: 500px;
-      height: 500px;
+      width: 640px;
+      height: 640px;
       border-radius: 0;
       object-fit: cover;
       border: 5px solid rgba(255, 255, 255, 0.1);
-      margin: 0 auto;
+      margin: 0; /* controlled by wrapper/grid alignment */
       display: block;
+      max-width: 100%;
     }
 
     .about-text h3 {
-      font-size: 4.5rem;
+      font-size: 5rem;
       font-weight: 700;
       margin-bottom: 45px;
       text-align: left;
+    }
+
+    /* push the text block to the right edge of its column on wide screens */
+    .about-text {
+      justify-self: end;
+      max-width: 700px;
     }
 
     .about-text p {
@@ -908,7 +927,11 @@
       border: 1px solid rgba(79, 195, 247, 0.1);
       position: relative;
       overflow: hidden;
-      aspect-ratio: 1/1.2;
+      /* use flexible height so content naturally flows instead of forcing a fixed aspect ratio */
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .service-card::before {
@@ -983,9 +1006,30 @@
     }
 
     .service-card h3 {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
       font-weight: 600;
       margin-bottom: 22px;
+    }
+
+    /* Ensure text wraps and respects card padding */
+    .service-card h3,
+    .service-desc,
+    .service-card li {
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    /* Let the list and description flow naturally within the card */
+    .service-desc {
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
 
     .service-card ul {
@@ -1021,18 +1065,21 @@
       padding: 35px;
     }
 
+    /* Contact block (left column) - increased for better legibility */
     .contact-info h3 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 20px;
       text-align: left;
+      line-height: 1.05;
     }
 
     .contact-info p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       margin-bottom: 30px;
-      opacity: 0.9;
-      line-height: 1.7;
+      opacity: 0.95;
+      line-height: 1.65;
+      max-width: 520px;
     }
 
     .contact-item {
@@ -1040,7 +1087,11 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
+    }
+
+    .contact-item i {
+      width: 24px;
     }
 
     .contact-item i {
@@ -1076,6 +1127,7 @@
       background: #142b40;
       padding: 50px;
       border-radius: 20px;
+      font-family: 'Bell MT', 'Times New Roman', serif;
     }
 
     .form-group {
@@ -1100,6 +1152,7 @@
 
     .form-control::placeholder {
       color: rgba(255, 255, 255, 0.5);
+      font-family: 'Bell MT', 'Times New Roman', serif;;
     }
 
     textarea.form-control {
@@ -1158,7 +1211,7 @@
       height: 45px;
       border-radius: 12px;
       object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
+      /* background: rgba(255, 255, 255, 0.1); */
       padding: 3px;
     }
 
@@ -1222,6 +1275,13 @@
       }
     }
 
+    /* Reduce horizontal padding on medium screens */
+    @media (max-width: 992px) {
+      :root {
+        --page-h-padding: 40px;
+      }
+    }
+
     @media (max-width: 992px) {
       .hero .container {
         flex-direction: column-reverse;
@@ -1273,9 +1333,24 @@
         gap: 50px;
       }
 
+      /* On smaller screens the avatar should be centered */
+      .about-content > div:first-child {
+        justify-self: center;
+      }
+
       .contact-content {
         grid-template-columns: 1fr;
         gap: 50px;
+      }
+
+      /* Slightly reduce contact font sizes for medium screens */
+      .contact-info h3 {
+        font-size: 2.2rem;
+      }
+
+      .contact-info p,
+      .contact-item {
+        font-size: 1.05rem;
       }
 
       .section {
@@ -1386,9 +1461,10 @@
       }
 
       .about-avatar {
-        width: 400px;
-        height: 400px;
+        width: 520px;
+        height: 520px;
         border-radius: 0;
+        margin: 0 auto;
       }
 
       .about-text h3 {
@@ -1423,6 +1499,11 @@
 
       .container {
         padding: 0 30px;
+      }
+
+      /* Mobile small screens: reduce the page padding variable */
+      :root {
+        --page-h-padding: 24px;
       }
 
       .about-content {
@@ -1497,9 +1578,10 @@
       }
 
       .about-avatar {
-        width: 300px;
-        height: 300px;
+        width: 320px;
+        height: 320px;
         border-radius: 0;
+        margin: 0 auto;
       }
 
       .about-text h3 {
@@ -1602,6 +1684,7 @@
         width: 300px;
         height: 300px;
         border-radius: 0;
+        margin: 0 auto;
       }
 
       .about-text h3 {
@@ -1627,15 +1710,15 @@
       }
 
       .contact-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       .contact-info p {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
 
       .contact-item {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
 
       .contact-form {
@@ -1721,6 +1804,7 @@
         width: 150px;
         height: 150px;
         border-radius: 0;
+        margin: 0 auto;
       }
 
       .about-text h3 {
@@ -1771,6 +1855,103 @@
     .hero {
       position: relative;
     }
+
+    /* Animated blobs background for hero */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0; /* sits behind hero content which has z-index:1 */
+      /* hide the blob layer because hero should show the rotating rectangle instead */
+      opacity: 0;
+      pointer-events: none;
+      filter: none;
+    }
+
+    .blob {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      transform: translate3d(0,0,0);
+      opacity: 0.6;
+      mix-blend-mode: screen;
+      will-change: transform, opacity;
+      transition: opacity 0.3s ease;
+    }
+
+    .blob--one {
+      background: radial-gradient(circle at 30% 30%, rgba(79,195,247,0.95), rgba(79,195,247,0.35));
+      left: -10%;
+      top: -20%;
+      animation: blobMoveOne 12s ease-in-out infinite;
+    }
+
+    .blob--two {
+      background: radial-gradient(circle at 70% 70%, rgba(41,182,246,0.95), rgba(41,182,246,0.25));
+      right: -8%;
+      top: 10%;
+      width: 680px;
+      height: 680px;
+      animation: blobMoveTwo 16s ease-in-out infinite;
+      opacity: 0.55;
+    }
+
+    .blob--three {
+      background: radial-gradient(circle at 50% 50%, rgba(2,136,209,0.95), rgba(2,136,209,0.2));
+      left: 20%;
+      bottom: -18%;
+      width: 640px;
+      height: 640px;
+      animation: blobMoveThree 20s ease-in-out infinite;
+      opacity: 0.45;
+    }
+
+    @keyframes blobMoveOne {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      25% { transform: translate3d(8vw, 6vh, 0) scale(1.05); }
+      50% { transform: translate3d(-6vw, 10vh, 0) scale(0.95); }
+      75% { transform: translate3d(4vw, -6vh, 0) scale(1.02); }
+      100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blobMoveTwo {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      25% { transform: translate3d(-6vw, -8vh, 0) scale(1.06); }
+      50% { transform: translate3d(8vw, 6vh, 0) scale(0.98); }
+      75% { transform: translate3d(-4vw, 4vh, 0) scale(1.03); }
+      100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blobMoveThree {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      25% { transform: translate3d(4vw, -6vh, 0) scale(1.04); }
+      50% { transform: translate3d(-8vw, -4vh, 0) scale(0.96); }
+      75% { transform: translate3d(6vw, 8vh, 0) scale(1.02); }
+      100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    /* Responsive tuning for blobs so they don't overpower small screens */
+    @media (max-width: 992px) {
+      .blob { width: 360px; height: 360px; }
+      .blob--two { width: 480px; height: 480px; }
+      .blob--three { width: 420px; height: 420px; }
+      .hero-bg { filter: blur(28px) saturate(110%); }
+    }
+
+    @media (max-width: 576px) {
+      .blob { width: 240px; height: 240px; opacity: 0.45; }
+      .blob--two { width: 300px; height: 300px; }
+      .blob--three { width: 280px; height: 280px; }
+      .hero-bg { filter: none; opacity: 0; }
+    }
+
+    /* Rotating rectangle for hero (replaces blob motion) */
+    /* Remove the decorative rotating rectangle (was top-right light square) */
+    .hero::after { display: none !important; }
 
     .hero .scroll-float {
       display: flex;
@@ -1844,6 +2025,12 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <!-- Animated background blobs (visual only) -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob--one"></div>
+      <div class="blob blob--two"></div>
+      <div class="blob blob--three"></div>
+    </div>
     <div class="container">
       <div class="hero-content">
         <h1>Design que inspira e transforma</h1>
@@ -1956,6 +2143,7 @@
             <i class="fas fa-eye"></i>
           </div>
           <h3>Identidade Visual</h3>
+          <p class="service-desc">Criação de logotipos, paletas de cores, tipografia e diretrizes de marca que representam sua essência.</p>
           <ul>
             <li>Logotipos e marcas</li>
             <li>Manual de identidade</li>
@@ -1969,6 +2157,7 @@
             <i class="fas fa-share-alt"></i>
           </div>
           <h3>Posts para Redes Sociais</h3>
+          <p class="service-desc">Criação de artes estratégicas para Instagram, Facebook, LinkedIn e outras redes.</p>
           <ul>
             <li>Design de posts</li>
             <li>Stories e reels</li>
@@ -1982,6 +2171,7 @@
             <i class="fas fa-laptop-code"></i>
           </div>
           <h3>Web Design</h3>
+          <p class="service-desc">Interfaces digitais intuitivas e atraentes que melhoram a experiência do usuário e a presença online.</p>
           <ul>
             <li>Sites responsivos</li>
             <li>Landing pages</li>
@@ -1995,6 +2185,7 @@
             <i class="fas fa-paint-brush"></i>
           </div>
           <h3>Artes Gráficas</h3>
+          <p class="service-desc">Desenvolvimento de materiais gráficos como cartazes, panfletos, flyers e apresentações com identidade visual alinhada.</p>
           <ul>
             <li>Ilustrações personalizadas</li>
             <li>Banners e outdoors</li>
@@ -2008,6 +2199,7 @@
             <i class="fas fa-print"></i>
           </div>
           <h3>Materiais Gráficos</h3>
+          <p class="service-desc">Criação de peças impressas com design profissional: cartões de visita, flyers, folders e materiais para eventos.</p>
           <ul>
             <li>Folders e catálogos</li>
             <li>Cartões de visita</li>
@@ -2021,6 +2213,7 @@
             <i class="fas fa-video"></i>
           </div>
           <h3>Motion Design</h3>
+          <p class="service-desc">Animações e gráficos em movimento para vídeos, apresentações e mídias digitais.</p>
           <ul>
             <li>Animações para redes</li>
             <li>Vídeos promocionais</li>

@@ -1327,6 +1327,23 @@
         margin-bottom: 20px;
       }
 
+      /* Center icons and text inside service cards on smaller screens */
+      .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .service-card .service-icon {
+        margin-bottom: 18px;
+        align-self: center;
+      }
+
+      .service-card h3, .service-desc {
+        text-align: center;
+      }
+
       .about-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1336,6 +1353,15 @@
       /* On smaller screens the avatar should be centered */
       .about-content > div:first-child {
         justify-self: center;
+      }
+      /* Center the about text block on mobile */
+      .about-text {
+        justify-self: center;
+        text-align: center;
+        max-width: 100%;
+      }
+      .about-text h3 {
+        text-align: center;
       }
 
       .contact-content {
@@ -1565,7 +1591,10 @@
 
       .service-card {
         padding: 25px;
-        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
 
       .service-card h3 {
@@ -1670,6 +1699,14 @@
       .service-card {
         padding: 20px;
         aspect-ratio: auto;
+      }
+
+      .service-card .service-icon {
+        margin-bottom: 16px;
+      }
+
+      .service-card h3, .service-desc {
+        text-align: center;
       }
 
       .service-card h3 {
@@ -1993,6 +2030,85 @@
       50% {
         opacity: 0.3;
       }
+    }
+    /* Ajustes de tipografia específicos para mobile: aumentar legibilidade */
+    @media (max-width: 576px) {
+      /* Geral */
+      html, body {
+        font-size: 18px; /* aumenta base para melhor legibilidade */
+      }
+
+      /* Hero */
+      .hero h1 { font-size: 2.6rem !important; } /* maior no mobile */
+      .hero p { font-size: 1.25rem !important; }
+
+      /* Seções */
+      .section-title { font-size: 2.6rem !important; }
+      .section-subtitle { font-size: 1.15rem !important; }
+
+      /* Portfolio */
+      .portfolio-item h3 { font-size: 1.15rem !important; }
+
+      /* Services */
+      .service-card h3 { font-size: 1.35rem !important; }
+      .service-card li { font-size: 1.05rem !important; }
+
+      /* About */
+      .about-text h3 { font-size: 2.8rem !important; }
+      .about-text p { font-size: 1.25rem !important; }
+
+      /* Contact */
+      .contact-info h3 { font-size: 1.9rem !important; }
+      .contact-info p { font-size: 1.15rem !important; }
+      .contact-item { font-size: 1.1rem !important; }
+
+      /* Buttons and nav */
+      .nav a { font-size: 1.15rem !important; }
+      .btn-primary, .btn-secondary { font-size: 1.15rem !important; padding: 16px 34px !important; }
+
+      /* Forms */
+      .form-control { font-size: 1.05rem !important; padding: 12px !important; }
+      .btn-submit { font-size: 1.05rem !important; padding: 12px 20px !important; }
+    }
+
+    @media (max-width: 480px) {
+      /* Aumenta mais ainda em telas muito pequenas */
+      html, body { font-size: 18.5px; }
+      .hero h1 { font-size: 2.2rem !important; }
+      .hero p { font-size: 1.2rem !important; }
+      .section-title { font-size: 2.2rem !important; }
+      .section-subtitle { font-size: 1.05rem !important; }
+      .portfolio-item h3 { font-size: 1.05rem !important; }
+      .service-card h3 { font-size: 1.2rem !important; }
+      .service-card li { font-size: 1rem !important; }
+      .about-text h3 { font-size: 2.2rem !important; }
+      .about-text p { font-size: 1.05rem !important; }
+      .contact-info h3 { font-size: 1.6rem !important; }
+      .contact-info p { font-size: 1rem !important; }
+      .nav a { font-size: 1.05rem !important; }
+      .btn-primary, .btn-secondary { font-size: 1.05rem !important; padding: 14px 28px !important; }
+      .form-control { font-size: 1rem !important; padding: 10px !important; }
+      .btn-submit { font-size: 1rem !important; padding: 10px 18px !important; }
+    }
+
+    @media (max-width: 360px) {
+      /* Pequenos ajustes finais para os menores aparelhos */
+      html, body { font-size: 17.5px; }
+      .hero h1 { font-size: 1.8rem !important; }
+      .hero p { font-size: 1rem !important; }
+      .section-title { font-size: 1.7rem !important; }
+      .section-subtitle { font-size: 0.95rem !important; }
+      .portfolio-item h3 { font-size: 0.95rem !important; }
+      .service-card h3 { font-size: 1rem !important; }
+      .service-card li { font-size: 0.95rem !important; }
+      .about-text h3 { font-size: 1.5rem !important; }
+      .about-text p { font-size: 0.95rem !important; }
+      .contact-info h3 { font-size: 1.3rem !important; }
+      .contact-info p { font-size: 0.95rem !important; }
+      .nav a { font-size: 0.95rem !important; }
+      .btn-primary, .btn-secondary { font-size: 0.95rem !important; padding: 12px 22px !important; }
+      .form-control { font-size: 0.9rem !important; padding: 8px !important; }
+      .btn-submit { font-size: 0.9rem !important; padding: 8px 14px !important; }
     }
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
